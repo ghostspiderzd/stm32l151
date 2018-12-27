@@ -1,0 +1,20 @@
+---- SystemCoreClock Matches (19 in 2 files) ----
+system_stm32l1xx.c (CMSIS) line 21 :   *      - SystemCoreClock variable: Contains the core clock (HCLK), it can be used
+system_stm32l1xx.c (CMSIS) line 25 :   *      - SystemCoreClockUpdate(): Updates the variable SystemCoreClock and must
+system_stm32l1xx.c (CMSIS) line 149 : uint32_t SystemCoreClock    = 32000000;
+system_stm32l1xx.c (CMSIS) line 177 :   *         SystemCoreClock variable.
+system_stm32l1xx.c (CMSIS) line 216 :   * @brief  Update SystemCoreClock according to Clock Register Values
+system_stm32l1xx.c (CMSIS) line 217 :   *         The SystemCoreClock variable contains the core clock (HCLK), it can
+system_stm32l1xx.c (CMSIS) line 222 :   *         to update SystemCoreClock variable value. Otherwise, any configuration
+system_stm32l1xx.c (CMSIS) line 229 :   *           - If SYSCLK source is MSI, SystemCoreClock will contain the MSI 
+system_stm32l1xx.c (CMSIS) line 232 :   *           - If SYSCLK source is HSI, SystemCoreClock will contain the HSI_VALUE(*)
+system_stm32l1xx.c (CMSIS) line 234 :   *           - If SYSCLK source is HSE, SystemCoreClock will contain the HSE_VALUE(**)
+system_stm32l1xx.c (CMSIS) line 236 :   *           - If SYSCLK source is PLL, SystemCoreClock will contain the HSE_VALUE(**)
+SystemCoreClockUpdate in system_stm32l1xx.c (CMSIS) :       SystemCoreClock = (32768 * (1 << (msirange + 1)));
+SystemCoreClockUpdate in system_stm32l1xx.c (CMSIS) :       SystemCoreClock = HSI_VALUE;
+SystemCoreClockUpdate in system_stm32l1xx.c (CMSIS) :       SystemCoreClock = HSE_VALUE;
+SystemCoreClockUpdate in system_stm32l1xx.c (CMSIS) :         SystemCoreClock = (((HSI_VALUE) * pllmul) / plldiv);
+SystemCoreClockUpdate in system_stm32l1xx.c (CMSIS) :         SystemCoreClock = (((HSE_VALUE) * pllmul) / plldiv);
+SystemCoreClockUpdate in system_stm32l1xx.c (CMSIS) :       SystemCoreClock = (32768 * (1 << (msirange + 1)));
+SystemCoreClockUpdate in system_stm32l1xx.c (CMSIS) :   SystemCoreClock >>= tmp;
+system_stm32l1xx.h (CMSIS) line 59 : extern uint32_t SystemCoreClock;          /*!< System Clock Frequency (Core Clock) */
